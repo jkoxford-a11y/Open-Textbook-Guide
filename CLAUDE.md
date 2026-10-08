@@ -6,7 +6,7 @@ Working folder for a faculty-facing website that helps Columbia College faculty 
 
 **Still to confirm:** course scope ("courses we teach") and how per-course options are stored and shown.
 
-Site: plain HTML + `shared.css` (copied from Psych-AI-Pilot for a matching look). No build step. Local git only for now; no GitHub remote yet.
+Site: plain HTML + `shared.css` (copied from Psych-AI-Pilot for a matching look). No build step. Repo: github.com/jkoxford-a11y/Open-Textbook-Guide (public). Live site: https://jkoxford-a11y.github.io/Open-Textbook-Guide/ (GitHub Pages from main, root). Pushing to main publishes.
 
 ## Source material
 

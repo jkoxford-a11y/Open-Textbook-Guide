@@ -17,3 +17,4 @@
 - Built `repositories.html`: OpenStax, Open Textbook Library, Noba, LibreTexts, OER Commons, OASIS, MERLOT, checked against their sites on 2026-10-08. Pressbooks Directory was left out because its site blocked the check.
 - **Correction:** OpenStax books are now all CC BY-NC-SA 4.0 (OpenStax FAQ and help article; Psychology 2e preface confirms). My earlier chat claim that OpenStax uses CC BY was wrong. Upside: OpenStax and Noba share a license, so they can be combined.
 - Start page now leads with the why: free for students, and the license allows use with AI.
+- Jon created the public repo jkoxford-a11y/Open-Textbook-Guide and turned on GitHub Pages (he ran the command himself after the auto-mode check blocked me). Working notes are public in the repo, as in Psych-AI-Pilot.
