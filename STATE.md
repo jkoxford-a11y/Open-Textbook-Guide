@@ -18,5 +18,6 @@
 
 ## Next steps
 
-- Jon reviews the two draft pages.
-- Settle scope and data approach, then verify candidate books per course at the source.
+- Jon reviews the three draft pages (live link above).
+- Proposed, not decided: have the Remix path say plainly that few faculty have the AI skills yet, and steer most toward Adopt.
+- When Jon sends the course list: settle the data approach (proposed: one data file rendered into course pages), then verify candidate books per course at the source.
