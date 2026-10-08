@@ -13,3 +13,7 @@
 - `git init` (local only). Catalog PDF gitignored. Site is plain HTML with Psych-AI-Pilot's `shared.css` plus a few added classes.
 - Drafted `index.html` and `licenses.html`. Checked rendering at desktop and phone width; used non-breaking hyphens so license names don't split on phones.
 - License content and the repository list (OpenStax, Open Textbook Library, LibreTexts, Noba, OER Commons, OASIS) come from field knowledge, not Jon's materials, so they are flagged for his review.
+- Jon: list the databases with what faculty can find in each; hold course pages until he sends a course list. Purpose: save students money and, in some cases, allow AI use. Few faculty have the AI skills to build their own books yet.
+- Built `repositories.html`: OpenStax, Open Textbook Library, Noba, LibreTexts, OER Commons, OASIS, MERLOT, checked against their sites on 2026-10-08. Pressbooks Directory was left out because its site blocked the check.
+- **Correction:** OpenStax books are now all CC BY-NC-SA 4.0 (OpenStax FAQ and help article; Psychology 2e preface confirms). My earlier chat claim that OpenStax uses CC BY was wrong. Upside: OpenStax and Noba share a license, so they can be combined.
+- Start page now leads with the why: free for students, and the license allows use with AI.

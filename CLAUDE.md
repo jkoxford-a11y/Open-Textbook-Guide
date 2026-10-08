@@ -17,6 +17,7 @@ Site: plain HTML + `shared.css` (copied from Psych-AI-Pilot for a matching look)
 - `STATE.md`: current state, open decisions, and next steps. Read it first.
 - `LOG.md`: dated log of what was decided and why. Append to it; don't rewrite it.
 - `index.html`: start page (adopt vs. remix, where to look).
+- `repositories.html`: open textbook collections and what's in each.
 - `licenses.html`: CC licenses, remix rules, compatibility chart, attribution.
 - `shared.css`: site styles.
 
