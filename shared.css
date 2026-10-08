@@ -1,0 +1,251 @@
+:root {
+  color-scheme: light;
+  --bg: #F1F4F3;
+  --bg-alt: #E7ECEA;
+  --panel: #FFFFFF;
+  --ink: #161B22;
+  --ink-soft: #46524E;
+  --ink-faint: #7C8A85;
+  --accent: #1B6E68;
+  --accent-strong: #12504B;
+  --accent-soft: #E4F1EF;
+  --line: #D3DBD8;
+  --rule: #A8B6B1;
+  --tier1: #4C7EA8; --tier1-soft: #E5EDF3;
+  --tier2: #2E8B7A; --tier2-soft: #E1F0EC;
+  --tier3: #B4791E; --tier3-soft: #F5EAD7;
+  --tier4: #A2502F; --tier4-soft: #F3E2DA;
+}
+/* Locked to light mode — this site does not follow OS/browser dark-mode preference. */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Charter, "Iowan Old Style", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+::selection { background: var(--accent-soft); color: var(--accent-strong); }
+.font-mast { font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif; }
+.font-mono { font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; }
+a { color: var(--accent-strong); }
+@media (prefers-color-scheme: dark) { a { color: var(--accent); } }
+:root[data-theme="dark"] a { color: var(--accent); }
+:root[data-theme="light"] a { color: var(--accent-strong); }
+
+/* Top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 28px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.mast {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
+  white-space: nowrap; text-decoration: none; color: var(--ink);
+}
+.mast span { color: var(--accent); }
+nav.toc {
+  display: flex; gap: 4px; overflow-x: auto;
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+}
+nav.toc a {
+  white-space: nowrap; text-decoration: none; color: var(--ink-faint);
+  font-size: 0.76rem; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 7px 10px; border-radius: 100px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+nav.toc a:hover { color: var(--ink); background: var(--bg-alt); }
+nav.toc a.current { color: var(--accent-strong); background: var(--accent-soft); font-weight: 700; }
+@media (prefers-color-scheme: dark) { nav.toc a.current { color: var(--accent); } }
+:root[data-theme="dark"] nav.toc a.current { color: var(--accent); }
+
+.page {
+  max-width: 720px; margin: 0 auto; padding: 56px 28px 90px;
+}
+.page-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; }
+.page-num {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  font-size: 0.82rem; color: var(--accent);
+  border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px;
+}
+h1.page-title {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.1;
+  letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+.page-sub { color: var(--ink-faint); font-size: 0.92rem; margin: 10px 0 36px; }
+h2.section-title {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: 1.4rem; margin: 2.2em 0 0.6em; text-wrap: balance;
+}
+h3 {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: 1.02rem; margin: 1.8em 0 0.6em; color: var(--accent-strong);
+}
+@media (prefers-color-scheme: dark) { h3 { color: var(--accent); } }
+:root[data-theme="dark"] h3 { color: var(--accent); }
+p { margin: 0 0 1.1em; }
+ul, ol { padding-left: 1.3em; margin: 0 0 1.2em; }
+li { margin-bottom: 0.5em; }
+strong { color: var(--ink); }
+
+.pullquote {
+  margin: 1.8em 0; padding: 18px 22px; border-left: 3px solid var(--accent);
+  background: var(--accent-soft); border-radius: 0 8px 8px 0; font-style: italic; color: var(--ink);
+}
+.pullquote cite {
+  display: block; margin-top: 10px; font-style: normal;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  font-size: 0.78rem; color: var(--ink-faint);
+}
+
+.tablewrap { overflow-x: auto; margin: 1.4em 0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint);
+}
+tr:last-child td { border-bottom: none; }
+
+.notthis { border-collapse: collapse; width: 100%; }
+.notthis td { padding: 11px 14px; border-bottom: 1px solid var(--line); }
+.notthis td:first-child { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: var(--line); width: 44%; }
+.notthis td:last-child { color: var(--ink); font-weight: 600; }
+
+.stepper { display: flex; gap: 12px; margin: 1.8em 0 2.2em; }
+.step { flex: 1; border-radius: 10px; padding: 16px 14px; background: var(--step-soft); border: 1px solid var(--line); }
+.step .ring { width: 26px; height: 26px; border-radius: 50%; border: 3px solid var(--step-c); margin-bottom: 12px; }
+.step .tname { font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--step-c); margin-bottom: 6px; }
+.step .tdesc { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.5; }
+@media (max-width: 640px) { .stepper { flex-direction: column; } }
+
+.taglist { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.2em 0; }
+.tag {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  font-size: 0.76rem; padding: 4px 10px; border-radius: 100px;
+  background: var(--bg-alt); border: 1px solid var(--line); color: var(--ink-soft);
+}
+
+.glossary dt {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: 0.92rem; color: var(--accent-strong); margin-top: 1.1em;
+}
+@media (prefers-color-scheme: dark) { .glossary dt { color: var(--accent); } }
+:root[data-theme="dark"] .glossary dt { color: var(--accent); }
+.glossary dd { margin: 3px 0 0; color: var(--ink-soft); }
+
+/* Cards (activities, resources, courses) */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 1.2em 0 2em; }
+.card {
+  border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px;
+  background: var(--panel);
+}
+.card h4 {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1rem; margin: 0 0 6px;
+}
+.card .meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
+.card .meta .tag { font-size: 0.7rem; }
+.card p { margin: 0.4em 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+.card .time { font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; font-size: 0.76rem; color: var(--ink-faint); }
+
+.filterbar {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 1.6em;
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+}
+.filterbtn {
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink-soft);
+  border-radius: 100px; padding: 7px 14px; font-size: 0.78rem; cursor: pointer;
+  transition: all 0.15s ease; font-family: inherit;
+}
+.filterbtn:hover { border-color: var(--accent); color: var(--ink); }
+.filterbtn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); font-weight: 700; }
+@media (prefers-color-scheme: dark) { .filterbtn.active { color: var(--accent); } }
+:root[data-theme="dark"] .filterbtn.active { color: var(--accent); }
+.card.hidden { display: none; }
+
+.statuspill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 2px 8px; border-radius: 100px;
+}
+.statuspill.done { background: var(--accent-soft); color: var(--accent-strong); }
+@media (prefers-color-scheme: dark) { .statuspill.done { color: var(--accent); } }
+:root[data-theme="dark"] .statuspill.done { color: var(--accent); }
+.statuspill.progress { background: var(--tier3-soft); color: var(--tier3); }
+.statuspill.idea { background: var(--bg-alt); color: var(--ink-faint); border: 1px solid var(--line); }
+
+footer.pagefoot {
+  max-width: 720px; margin: 0 auto; padding: 40px 28px 90px;
+  color: var(--ink-faint); font-size: 0.86rem;
+}
+footer.pagefoot .snap {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  font-size: 0.74rem; color: var(--rule); margin-bottom: 8px;
+}
+
+/* Competency concept cards + naive/competent comparison */
+.concept {
+  border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin: 1.2em 0 1.6em;
+  background: var(--panel);
+}
+.concept-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-strong);
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; font-weight: 700; font-size: 0.82rem;
+  margin-right: 8px;
+}
+@media (prefers-color-scheme: dark) { .concept-num { color: var(--accent); } }
+.concept h3 { margin-top: 0; display: inline; font-size: 1.08rem; }
+details.disclosure {
+  margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px;
+}
+details.disclosure summary {
+  cursor: pointer; font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.82rem; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.03em;
+}
+.naive-competent { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+@media (max-width: 640px) { .naive-competent { grid-template-columns: 1fr; } }
+.nc-block { border-radius: 8px; padding: 12px 14px; font-size: 0.9rem; }
+.nc-block.naive { background: var(--tier4-soft); }
+.nc-block.competent { background: var(--tier2-soft); }
+.nc-block .nc-label {
+  font-family: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; display: block;
+}
+.nc-block.naive .nc-label { color: var(--tier4); }
+.nc-block.competent .nc-label { color: var(--tier2); }
+
+.probe-list { counter-reset: probe; list-style: none; padding-left: 0; }
+.probe-list li {
+  counter-increment: probe; padding: 10px 0 10px 34px; position: relative; border-bottom: 1px solid var(--line);
+}
+.probe-list li:last-child { border-bottom: none; }
+.probe-list li::before {
+  content: counter(probe); position: absolute; left: 0; top: 10px;
+  width: 22px; height: 22px; border-radius: 50%; background: var(--bg-alt); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace; font-size: 0.74rem; color: var(--ink-soft);
+}
+
+/* OER site: two-path choice cards and license compatibility grid */
+.paths { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1.4em 0 2em; }
+@media (max-width: 640px) { .paths { grid-template-columns: 1fr; } }
+.path { border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 10px; padding: 18px 20px; background: var(--panel); }
+.path.remix { border-top-color: var(--tier3); }
+.path h3 { margin-top: 0; }
+.path p { font-size: 0.94rem; color: var(--ink-soft); }
+.yes { color: var(--tier2); font-weight: 700; }
+.no { color: var(--tier4); font-weight: 700; }
+.compat td, .compat th { text-align: center; }
+.compat td:first-child, .compat th:first-child { text-align: left; }
