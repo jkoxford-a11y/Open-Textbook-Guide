@@ -19,3 +19,8 @@
 - Start page now leads with the why: free for students, and the license allows use with AI.
 - Jon created the public repo jkoxford-a11y/Open-Textbook-Guide and turned on GitHub Pages (he ran the command himself after the auto-mode check blocked me). Working notes are public in the repo, as in Psych-AI-Pilot.
 - Site live and checked (all pages return 200). Session closed out.
+
+## 2026-10-10
+
+- Jon wants to share the site as a zip so the vice provost can edit it with her own Claude agent. Checked the folder: nothing sensitive (no secrets, student data, or private email). The zip leaves out .git, the catalog PDF, and the working notes.
+- Added `handoff/CLAUDE.md` and `handoff/AGENTS.md`: generic project context and rules (plain HTML, reuse shared.css, keep nav in sync, verify licenses at source, send changes back to Jon). Built `~/Downloads/Open-Textbook-Guide.zip` with the four site files plus these two at the root.

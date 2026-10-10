@@ -20,6 +20,7 @@ Site: plain HTML + `shared.css` (copied from Psych-AI-Pilot for a matching look)
 - `repositories.html`: open textbook collections and what's in each.
 - `licenses.html`: CC licenses, remix rules, compatibility chart, attribution.
 - `shared.css`: site styles.
+- `handoff/`: generic CLAUDE.md + AGENTS.md for sharing the site with others. Zip them at the root with the site files (index, repositories, licenses, shared.css); leave out these working notes.
 
 ## Working rules
 
